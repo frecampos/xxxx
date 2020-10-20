@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva en línea - Cool Wave</title>
+    <link rel="icon" type="image/jpg" href="img/054-car-wash-7.png">
+    <link rel="stylesheet" href="estilo/estilo_reserva.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.css">
+</head>
+<body>
+    <!--CABECERA-->
+    <div class="subtitulo">
+        <div class="titulo">
+            <a href="index.html">Lavado de autos Cool Wave</a>
+            <img src="img/—Pngtree—light blue luxury fashion sports_4484917.png" alt="">
+        </div>
+        <p>Servicio rapido, profesional y confiable</p>
+    </div>
+    <!--barra de navegacion-->
+    <div class="navbar">
+        <!--href sirve para poner links-->
+        <a href="index.html">Inicio</a>
+        <a href="reserva.html">Reserva en linea</a>
+        <a href="galeria_imagenes.html">Galeria</a>
+        <a href="quienes_somos.html">Quienes somos</a>
+        <a href="locales.html">Nuestro local</a>
+        <a href="formulario_registro.html">Registrate</a>
+        <a href="login.html">Inicio de sesion</a>
+        <a href="productos.html">Insumos</a>
+    </div>
+    <div class="contenido">
+        <h1>Reserva en línea</h1>
+        <form action="" method="post" class="formulario-registro" onsubmit="return validarTodo()">
+            <h2 class="formulario-titulo">Ingrese su información</h2>
+            <div class="contenedor-input">
+                <input class="col-30" type="text" minlength="9" maxlength="10" name="txtRut" placeholder="Ingrese Rut" required>
+                <input class="col-30" type="text" minlength="3" maxlength="80" name="txtNombre" placeholder="Ingrese Nombres" required>
+                <input class="col-30" type="text" minlength="3" maxlength="80" name="txtApellido" placeholder="Ingrese Apellidos" required>
+                <input class="col-100" type="email" name="txtCorreo" placeholder="Ingrese Correo" required>
+                <input class="col-100" type="number" name="txtFono" placeholder="Ingrese Teléfono" required>
+                <tr>
+                    <td>    
+                        <h3>Seleccione Fecha:</h3><input class="col-50" type="date" name="txtFecha" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>    
+                        <h3>Seleccione Hora:</h3><input class="col-60" type="time" name="txtHora" required>
+                    </td>
+                </tr>
+
+                <input type="submit" value="Reservar" class="btn-reserva">
+                <input type="reset" value="Limpiar" class="btn-limpiar">
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <h3>Cool Wave - Limpieza y Mantenimiento de Vehículos</h3>
+        <h4><i class="far fa-clock"></i>Horario de Atención: Lunes a Viernes de 8:00am a 21:00pm</h4>
+        <h5>Gral Bustamante 201, Proviencia, Santiago</h5>
+        <h5>Número de Contacto: (2)234588962</h5>
+        <h5>Whatsapp: (56)966677998</h5>
+         <h2>Siguenos en nuestras redes sociales</h2>
+        <h1><a class="icon" href="#"><span class="fab fa-facebook-f"></span></a>
+        <a class="icon" href="#"><span class="fab fa-instagram"></span></a>
+        <a class="icon" href="#"><span class="fab fa-twitter"></span></a>
+        <h6>Copyright © 2020 Todos los derechos reservados</h6>
+    </div>
+</body>
+</html>

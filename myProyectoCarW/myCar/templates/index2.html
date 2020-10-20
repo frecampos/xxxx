@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load static %}
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/estilo_index.css' %}">
+{% endblock estilos %}
+{% block contenido %}
+    <!--CARRUSEL-->
+    <div class="carrusel">
+      <ul>
+        {% for item in autos %}
+          <li><img src="{{item.imagen.url}}" alt=""></li>
+        {% endfor %}             
+      </ul>
+    </div>
+  </div>
+    <!--CONTENIDO-->
+    <div class="row">
+        <div class="side">
+          <div class="servicio">
+            <h1>Servicios</h1>
+          </div>
+          <div class="servicio1"> 
+            <h2>Lavado</h2>
+            <h3>Exterior Simple</h3>
+            <li>Vehiculos Chicos   $5.000</li>
+            <li>Vehiculos Medianos $8.990</li>
+            <li>Vehiculos Grandes  $12.990</li>
+            <img src="{% static 'img/servicios/car-wash-2179231_1280-1024x730.jpg' %}" alt="">
+          </div>
+          <div class="servicio3">
+            <h2>Limpieza</h2>
+            <h3>Interior y Exterior</h3>
+            <li>Vehiculos Chicos   $10.500</li>
+            <li>Vehiliculos Medianos $13.990</li>
+            <li>Vehiculos Grandes  $16.990</li>
+            <img src="{% static 'img/servicios/interior.jpg' %}" alt="">
+          </div>
+          <div class="servicio4">
+            <h2>Lavado más cera</h2>
+            <li>Lavado exterior de carrocería</li>
+            <li>Encerado de carrocería</li>
+            <li>Renovación de neumáticos</li>
+            <li>Renovación de plásticos negros exteriores</li>
+            <img src="{% static 'img/servicios/encerado mas cera.jpg' %}" alt="">
+          </div>
+          <div class="servicio5">
+            <h2>Lavado más cera + aspirado completo</h2>
+            <li>Lavado exterior de carrocería</li>
+            <li>Encerado de carrocería</li>
+            <li>Renovación de neumáticos</li>
+            <li>Renovación de plásticos negros exteriores</li>
+            <li>Aspirado Interior</li>
+            <li>Limpieza de vinilos</li>
+            <li>Renovación de gomas interiores</li>
+            <img src="{% static 'img/servicios/encerado mas cera+lavado.jpg' %}" alt="">
+          </div>
+          <div class="servicio6">
+            <h2>Servicios Adicionales</h2>
+            <li>Limpieza de tapiz o cuero alcántara</h4>
+            <li>Lavado de tapiz a vapor</li>
+            <li>Limpieza de cuero de piel o Ecocuero</li>
+            <li>Crema de limpieza y Protectora de cuero</li>
+            <li>Encerado con máquina</li>
+            <li>Limpieza exterior, mezcla de cera y abrillantador de pintura</h4>
+            <li>Lavado de motor</li>
+            <img src="{% static 'img/servicios/otros.jpg' %}" alt="">
+          </div>
+        </div>
+        <!--comentarios-->
+        <div class="main">
+          <div class="comentario_cli">
+            <h2>Comentarios de Clientes</h2>
+        
+            <ul id="comments-list" class="comments-list">
+              <li>
+                <div class="comment-main-level">
+                  <!-- Avatar -->
+                  <div class="comment-avatar"><img src="{% static 'img/comentarios/co2.jpg' %}" alt=""></div>
+                  <!-- Contenedor del Comentario -->
+                  <div class="comment-box">
+                    <div class="comment-head">
+                      <h3 class="comment-name by-author"><a href="#">Rodrigo Guajardo</a></h3>
+                      <span>hace 2 horas</span>
+                      <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                      <p>Son muy profesionales! dejaron mi camioneta muy limpia y hermosa! 100% recomendables.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Respuestas de los comentarios -->
+                <ul class="comments-list reply-list">
+                  <li>
+                    <!-- Avatar -->
+                    <div class="comment-avatar"><img src="{% static 'img/comentarios/co4.jpg' %}" alt=""></div>
+                    <!-- Contenedor del Comentario -->
+                    <div class="comment-box">
+                      <div class="comment-head">
+                        <h3 class="comment-name"><a href="#">Christian Gomez</a></h3>
+                        <span>hace 1 hora</span>
+                        <i class="fa fa-heart"></i>
+                      </div>
+                      <div class="comment-content">
+                        <p>Te apoyo! desconfiaba de ellos pero cuando me llamaron y me entregaron mi auto quedo como nuevo!</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <!-- Avatar -->
+                    <div class="comment-avatar"><img src="{% static 'img/comentarios/co2.jpg' %}" alt=""></div>
+                    <!-- Contenedor del Comentario -->
+                    <div class="comment-box">
+                      <div class="comment-head">
+                        <h3 class="comment-name by-author"><a href="#">Rodrigo Guajardo</a></h3>
+                        <span>hace 30 minutos</span>
+
+                        <i class="fa fa-heart"></i>
+                      </div>
+                      <div class="comment-content">
+                        <p>Si amigo, hacen un trabajo impecable:)</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="comment-main-level">
+                  <!-- Avatar -->
+                  <div class="comment-avatar"><img src="{% static 'img/comentarios/co3.jpg' %}" alt=""></div>
+                  <!-- Contenedor del Comentario -->
+                  <div class="comment-box">
+                    <div class="comment-head">
+                      <h3 class="comment-name"><a href="#">Angela Carrasco</a></h3>
+                      <span>hace 3 días</span>
+                      <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                      <P>Recomendables! su atención al cliente es excelente y son muy rápidos con los lavados, mi auto quedo perfecto.</P>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="comentario_em">
+            <h1>Equipos de Autolavado</h1>
+            <li>Cada equipo de autolavado fabricado es único,  construido por ingeniería basada en la experiencia en campo, lo que hace a nuestras unidades más eficaces y con mejor rendimiento.</li>
+            <li>Para nosotros no hay nada más importante que  poder crear y desarrollar tu equipo personalizado de acuerdo a tus necesidades,  color predilecto y tu propio logotipo. Por ello ofrecemos las mejores unidades y totalmente personalizadas.</li>
+            <img src="{% static 'img/MAQUINAS/1.jpg' %}" alt="">
+          </div>
+          
+
+        </div>
+    </div>
+  {% endblock contenido %}

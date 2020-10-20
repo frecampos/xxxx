@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'estilo/estilo_registro.css' %}">
+{% endblock estilos %}
+{% block contenido %}
+    <div class="contenido">
+        <h1>Formulario de Registro de Cliente</h1>
+        
+        <script src="{% static 'JS/validaciones.js' %}"></script>
+        
+        <form action="" method="post" class="formulario-registro" onsubmit=" return validarTodo()">
+        {% csrf_token %}
+            <h2 class="formulario-titulo">Ingrese su información</h2>
+            <div class="contenedor-input">
+                 <input class="col-30" type="text" minlength="3" maxlength="80" name="txtNombre" id="txtNombre" placeholder="Ingrese Nombres" required>
+                <input class="col-30" type="text" minlength="3" maxlength="80" name="txtApellido" id="txtApellido" placeholder="Ingrese Apellidos" required>
+                <input class="col-100" type="email" name="txtCorreo" placeholder="Ingrese Correo" id="txtCorreo" required>
+                <input class="col-30" type="text" minlength="8" name="txtUsuario" id="txtUsuario" placeholder="Ingrese Nombre Usuario" required>
+                <input class="col-50" type="password" name="txtPass1" id="txtPass1" placeholder="Ingrese una contraseña" required>
+                <input class="col-50" type="password" name="txtPass2" id="txtPass2" placeholder="repita la contraseña" required>
+
+                <input type="submit" value="Registrar" class="btn-registro">
+                <input type="reset" value="Limpiar" class="btn-limpiar">
+            </div>
+        </form>
+    </div>
+    <div style="text-align: center; color: brown;">
+    <h2>{{msg}}</h2>
+</div>
+{% endblock contenido %} 

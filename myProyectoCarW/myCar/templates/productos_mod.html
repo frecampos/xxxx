@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% load static %} {% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/estilo_productos.css' %}"> {% endblock estilos %} {% block contenido %}
+<script>
+    function ir() {
+        location.href = '/lista_insumos/';
+    }
+</script>
+<div class="contenido">
+    <h1>Modificacion de Insumos</h1>
+    <form action="{% url 'MODIFICAR' %}" method="post" class="formulario-registro" onsubmit="return validarTodo()">
+        {% csrf_token %}
+        <h2 class="formulario-titulo">Modifique los Insumos</h2>
+        <div class="contenedor-input">
+            <input class="col-30" minlength="3" maxlength="120" type="text" name="txtNombreP" placeholder="Ingrese Nombre Producto" value="{{insumo.nombre}}" required>
+            <input class="col-30" min="1" type="number" name="txtPrecio" placeholder="Ingrese Precio" value="{{insumo.precio}}" required>
+            <input class="col-50" minlength="3" maxlength="200" type="text" name="txtDescripcion" placeholder="Ingrese Descripción" value="{{insumo.descripcion}}">
+            <input class="col-30" type="text" name="txtStock" placeholder="Ingrese stock" value="{{insumo.stock}}">
+
+            <input type="submit" value="Modificar" class="btn-enviar">
+            <input type="button" onclick="ir()" value="Admin Insumo" class="btn-limpiar">
+        </div>
+    </form>
+</div>
+<div style="text-align: center;color: brown;">
+    <h2>{{msg}}</h2>
+</div>
+{% endblock contenido %}

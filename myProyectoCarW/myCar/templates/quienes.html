@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'estilo/estilo_quie_somos.css' %}">
+{% endblock estilos %}
+    
+{% block contenido %}
+
+
+
+    <div class="contenido">
+        <div class="informacion">
+            <h2>Nosotros</h2>
+            <h4>Cool Wave ofrece un servicio de lavado de autos con alto estándar de calidad, asegurando siempre el cuidado máximo del vehículo.</h4>
+            <h4>Se trata de un servicio eficiente con productos importados que protegen la integridad del automóvil en todo momento. Cool Wave cuenta con máquinas de última tecnología que procuran entregar siempre un servicio con altos estándares de calidad a todo tipo de vehículo, además de contar con personal especialmente capacitado.</h4>
+            <h4>Llevamos 3 años en el mercado especializándonos en el área de servicio de limpieza automotriz, contamos con la preferencia de miles de clientes, promediando 5.000 autos anuales que han vivido la experiencia Cool Wave.</h4>
+            <h4>Gracias a nuestra basta experiencia, nos hemos expandido para entregarte una gama de servicios mayor, ahora tenemos un servicio de automotora, con la gran vitrina que ofrece FlashWash y además contamos con varias sucursales a lo largo de Santiago.</h4>
+        </div>
+        {% for item in myv %}
+        <div class="mision">
+            <h2>Misión</h2>
+            <h4>{{item.mision}}</h4>
+            <img src="{% static 'img/vision y mision/mision.jpg' %}" alt="">
+        </div>
+        <div class="vision">
+            <h2>Visión</h2>
+            <h4>{{item.vision}}</h4>
+            <img src="{% static 'img/vision y mision/vision.jpg' %}" alt="">
+        </div>
+        {% endfor %}
+    </div>
+    
+ {% endblock contenido %}     

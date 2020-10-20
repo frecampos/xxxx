@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autolavado - Cool Wave</title>
+    <link rel="icon" type="image/jpg" href="{% static 'img/054-car-wash-7.png' %}">
+    {% block estilos %}
+    
+    {% endblock estilos %}
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome-free-5.14.0-web/css/all.css">
+</head>
+<body>
+    <!--CABECERA-->
+    <div class="subtitulo">
+        <div class="titulo">
+            <a href="index.html">Lavado de autos Cool Wave</a>
+            <img src="{% static 'img/—Pngtree—light blue luxury fashion sports_4484917.png' %}" alt="">
+        </div>
+        <p>Servicio rapido, profesional y confiable</p>
+        
+    </div>
+    <!--barra de navegacion-->
+    <div class="navbar">
+        <!--href sirve para poner links-->
+        <a href="{% url 'INDEX' %}">Inicio</a>
+        <a href="">Reserva en linea</a>
+        <a href="{% url 'GALE' %}">Galeria</a>
+        <a href="{% url 'QUIEN' %}">Quienes somos</a>
+        <a href="">Nuestro local</a>
+        <a href="{% url 'REGISTRO' %}">Registrate</a>
+        <a href="{% url 'INSUMOS' %}">Insumos</a>
+
+        {% if user.is_authenticated %}            
+            <a href="">Bienvenido {{user.first_name}} {{user.last_name}}</a>
+            <a href="{% url 'LOGOUT' %}">Cerrar sesion</a>
+        {% else %}
+            <a href="{% url 'LOGIN' %}">Inicio de sesion</a>
+        {% endif %}   
+       
+    </div>
+    {% block contenido %}
+    
+    {% endblock contenido %}
+    <div>
+      <div class="footer">
+        <h3>Cool Wave - Limpieza y Mantenimiento de Vehículos</h3>
+        <h4><i class="far fa-clock"></i>Horario de Atención: Lunes a Viernes de 8:00am a 21:00pm</h4>
+        <h5>Gral Bustamante 201, Proviencia, Santiago</h5>
+        <h5>Número de Contacto: (2)234588962</h5>
+        <h5>Whatsapp: (56)966677998</h5>
+        <h2>Siguenos en nuestras redes sociales</h2>
+        <h1><a class="icon" href="#"><span class="fab fa-facebook-f"></span></a>
+        <a class="icon" href="#"><span class="fab fa-instagram"></span></a>
+        <a class="icon" href="#"><span class="fab fa-twitter"></span></a>
+        <h6>Copyright © 2020 Todos los derechos reservados</h6>
+      </div>
+    </div>
+    {% block js %}
+    
+    {% endblock js %}
+</body>
+</html>
