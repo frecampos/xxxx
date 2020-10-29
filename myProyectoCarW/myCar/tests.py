@@ -1,34 +1,27 @@
 from django.test import TestCase
 import unittest
-from .models import MisionyVision
+#from .models import MisionyVision,Insumos
 
 # Create your tests here.
 class TestUno(unittest.TestCase):
 
-    def test_igualdad_cadenas(self):
-        self.assertEqual('iii','iii')
-
-    def test_texto_mayuscula(self):
-        self.assertEqual('ii'.upper(),'II')
-
-    def test_no_esta_el_contenido(self):
-        self.assertFalse('hola' in 'es un Coca Cola')
-
     def grabar_mision_y_vision(self):
-        m = MisionyVision(
-            mision="nuestra mision...",vision="nuestra vision es"
-        )
-        valor=0
-        try:
-            m.save()
-            valor = 1
-        except:
-            valor = 0
-        self.assertEqual(valor,1)
+        self.assertEqual('i','i')
 
-    def listar_mision(self):
-        lm= MisionyVision.objects.all()
-        self.assertIsInstance(lm,MisionyVision)
-        
+class TestInsumo(unittest.TestCase):
+
+    def grabar_insumo(self):
+        valor = 0
+        try:
+            insum = Insumos(
+                nombre="mm", precio=199, descripcion="kjahsdk",stock=98
+            )
+            insum.save()
+            valor =1
+        except:
+            valor =0
+        self.assertIn(valor,1)
+      
+
 if __name__ == "__main__":
     unittest.main()
